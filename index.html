@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zoomable Mandelbrot Fractal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 text-white">
+    <div class="fixed top-0 left-0 m-2">
+      <button id="toggle-settings" class="bg-blue-500 px-4 py-2 rounded">Settings</button>
+      <div id="coords" class="mt-2 text-sm"></div>
+    </div>
+
+    <div id="settings-panel" class="fixed top-0 right-0 h-screen w-80 p-4 bg-gray-800 border-l border-gray-700 transition duration-300 ease-in-out transform translate-x-full">
+      <h2 class="text-2xl mb-4">Settings</h2>
+
+      <div class="mb-4">
+        <label class="text-sm">Max Iterations</label>
+        <input type="number" id="max-iterations" class="w-full mt-1 bg-gray-700 rounded px-2 py-1" value="100" />
+      </div>
+
+      <div class="mb-4">
+        <label class="text-sm">Color Scheme</label>
+        <select id="color-scheme" class="w-full mt-1 bg-gray-700 rounded px-2 py-1">
+          <option value="rainbow">Rainbow</option>
+          <option value="grayscale">Grayscale</option>
+          <option value="fire">Fire</option>
+          <option value="ice">Ice</option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <label class="text-sm">Zoom Speed</label>
+        <input type="range" id="zoom-speed" class="w-full mt-1" min="0.1" max="2" step="0.1" value="1" />
+      </div>
+
+      <button id="reset-fractal" class="bg-blue-500 px-4 py-2 rounded">Reset</button>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <script src="mandelbrot.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
